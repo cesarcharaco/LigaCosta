@@ -19,4 +19,7 @@ Auth::routes();
 
 Route::middleware('auth')->group(function () {
 	Route::get('/home', 'HomeController@index')->name('home');
+	Route::resource('equipos','EquiposController');
+	Route::resource('coachs','CoachController');
+	Route::resource('jugadores','JugadorController');
 });
