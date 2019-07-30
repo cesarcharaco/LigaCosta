@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html class="no-js" lang="es">
 <head>
     @include('layouts.meta')
 
@@ -11,29 +11,12 @@
 
 </head>
 <body>
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-
-    <div id="main-wrapper">
+    @include('layouts.sidebar')
+    <div id="right-panel" class="right-panel">
         @include('layouts.header')
-        @include('layouts.sidebar')
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper">
-            @yield('content')
-            @include('layouts.footer')
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-        <!-- ============================================================== -->
+        @yield('content')
+        @include('layouts.footer')
     </div>
-
-    
     @include('layouts.scripts')
 
 </body>

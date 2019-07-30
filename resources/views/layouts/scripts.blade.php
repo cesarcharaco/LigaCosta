@@ -1,85 +1,30 @@
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="{{ asset('matrix/assets/libs/jquery/dist/jquery.min.js') }}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('matrix/assets/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script src="{{ asset('matrix/assets/extra-libs/sparkline/sparkline.js') }}"></script>
-    <!--Wave Effects -->
-    <script src="{{ asset('matrix/dist/js/waves.js') }}"></script>
-    <!--Menu sidebar -->
-    <script src="{{ asset('matrix/dist/js/sidebarmenu.js') }}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{ asset('matrix/dist/js/custom.min.js') }}"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
-    <!-- Charts js Files -->
-    <script src="{{ asset('matrix/assets/libs/flot/excanvas.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/flot/jquery.flot.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/flot/jquery.flot.pie.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/flot/jquery.flot.time.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/flot/jquery.flot.stack.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/flot/jquery.flot.crosshair.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
-    <script src="{{ asset('matrix/dist/js/pages/chart/chart-page-init.js') }}"></script>
+<script src="{{ asset('sufee/assets/js/vendor/jquery-2.1.4.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="{{ asset('sufee/assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/main.js') }}"></script>
 
-    <!-- this page js -->
-    <script src="{{ asset('matrix/assets/extra-libs/multicheck/datatable-checkbox-init.js') }}"></script>
-    <script src="{{ asset('matrix/assets/extra-libs/multicheck/jquery.multicheck.js') }}"></script>
-    <script src="{{ asset('matrix/assets/extra-libs/DataTables/datatables.min.js') }}"></script>
 
-    <script src="{{ asset('matrix/assets/libs/select2/dist/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('matrix/assets/libs/select2/dist/js/select2.min.js') }}"></script>
-
+    <script src="{{ asset('sufee/assets/js/lib/chart-js/Chart.bundle.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/widgets.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/lib/vector-map/jquery.vmap.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/lib/vector-map/jquery.vmap.min.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/lib/vector-map/jquery.vmap.sampledata.js') }}"></script>
+    <script src="{{ asset('sufee/assets/js/lib/vector-map/country/jquery.vmap.world.js') }}"></script>
     <script>
-    /****************************************
-     *       Basic Table                   *
-     ****************************************/
-    $('#zero_config').DataTable();
-</script>
-    <script>
-        //***********************************//
-        // For select 2
-        //***********************************//
-        $(".select2").select2();
-
-        /*colorpicker*/
-        $('.demo').each(function() {
-        //
-        // Dear reader, it's actually very easy to initialize MiniColors. For example:
-        //
-        //  $(selector).minicolors();
-        //
-        // The way I've done it below is just for the demo, so don't get confused
-        // by it. Also, data- attributes aren't supported at this time...they're
-        // only used for this demo.
-        //
-        $(this).minicolors({
-                control: $(this).attr('data-control') || 'hue',
-                position: $(this).attr('data-position') || 'bottom left',
-
-                change: function(value, opacity) {
-                    if (!value) return;
-                    if (opacity) value += ', ' + opacity;
-                    if (typeof console === 'object') {
-                        console.log(value);
-                    }
-                },
-                theme: 'bootstrap'
-            });
-
-        });
-        /*datwpicker*/
-        /*$('.mydatepicker').datepicker();
-        $('#datepicker-autoclose').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        });
-        var quill = new Quill('#editor', {
-            theme: 'snow'
-        });*/
-
+        ( function ( $ ) {
+            "use strict";
+            jQuery( '#vmap' ).vectorMap( {
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: [ '#1de9b6', '#03a9f5' ],
+                normalizeFunction: 'polynomial'
+            } );
+        } )( jQuery );
     </script>
-@yield('scripts')
