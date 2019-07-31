@@ -24,7 +24,7 @@ class CreateJugadorTable extends Migration
             $table->string('num_camiseta');
             $table->unsignedBigInteger('id_equipo');
 
-            $table->foreign('id_equipo')->references('id')->to('equipos')->onDelete('cascade');
+            $table->foreign('id_equipo')->references('id')->on('equipos')->onDelete('cascade');
             $table->timestamps();
         });
     }

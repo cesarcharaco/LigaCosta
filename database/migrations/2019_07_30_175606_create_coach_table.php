@@ -21,7 +21,7 @@ class CreateCoachTable extends Migration
             $table->integer('edad');
             $table->unsignedBigInteger('id_equipo');
 
-            $table->foreign('id_equipo')->references('id')->to('equipos')->onDelete('cascade');
+            $table->foreign('id_equipo')->references('id')->on('equipos')->onDelete('cascade');
             $table->timestamps();
         });
     }
