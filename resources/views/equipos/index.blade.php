@@ -50,7 +50,7 @@
                         <td align="center">
                             <a href="#"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
 
-                            <a href="#"><button type="button" class="btn btn-danger btn-sm pull"><i class="fa fa-trash"></i></button></a>
+                            <button type="button" class="btn btn-danger btn-sm pull" data-toggle="modal" data-target="#staticModal"><i class="fa fa-trash"></i></button>
 
 
                         </td>
@@ -66,5 +66,27 @@
         </div>
     </div><!-- .animated -->
 </div><!-- .content -->
+
+<div class="modal fade" id="staticModal" tabindex="-1" role="dialog" aria-labelledby="staticModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticModalLabel">Eliminar equipo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                   ¿Estas seguro que desea eliminar?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
