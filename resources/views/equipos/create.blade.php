@@ -31,7 +31,7 @@
                         <strong>Registro de equipo</strong>
                     </div>
                     <div class="card-body card-block">
-                        <form action="" method="post" class="form-horizontal">
+                        <form action="{{ route('equipos.store') }}" method="post" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="nombre" class=" form-control-label">Nombre</label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre..." class="form-control"></div>
@@ -45,7 +45,7 @@
                                 <div class="col-12 col-md-9">
                                     <select name="liga" id="liga" class="form-control">
                                         <option value="Football Tackle">Football Tackle</option>
-                                        <option value="Football flag">Football Flag</option>
+                                        <option value="Football Flag">Football Flag</option>
                                     </select>
                                 </div>
                             </div>
