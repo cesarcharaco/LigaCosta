@@ -50,7 +50,7 @@
                         <td align="center">
                             <a href="#"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
 
-                            <button type="button" class="btn btn-danger btn-sm pull" data-toggle="modal" data-target="#staticModal"><i class="fa fa-trash"></i></button>
+                            <button onclick="eliminar('{{ $key->id }}')" type="button" class="btn btn-danger btn-sm pull" data-toggle="modal" data-target="#staticModal"><i class="fa fa-trash"></i></button>
 
 
                         </td>
@@ -80,13 +80,25 @@
                 <p>
                    ¿Estas seguro que desea eliminar?
                 </p>
+            {!! Form::open(['route' => ['equipos.destroy',1033], 'method' => 'DELETE']) !!}
+                @csrf
+             <input type="hidden" name="id_equipo" id="id_equipo">       
+                
             </div>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-danger">Confirmar</button>
             </div>
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
 @endsection
-
+@section('scripts')
+<script type="text/javascript">
+    function eliminar(id_equipo) {
+        $("#id_equipo").val(id_equipo);
+    }
+</script>
+@endsection

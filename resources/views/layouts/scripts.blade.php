@@ -45,3 +45,5 @@
           $('#bootstrap-data-table-export').DataTable();
         } );
     </script>
+
+@yield('scripts')
