@@ -48,7 +48,7 @@
                         <td>{{ $key->lema }}</td>
                         <td>{{ $key->liga}}</td>
                         <td align="center">
-                            <a href="#"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
+                            <a href="{{ route('equipos.edit',$key->id) }}"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
 
                             <button onclick="eliminar('{{ $key->id }}')" type="button" class="btn btn-danger btn-sm pull" data-toggle="modal" data-target="#staticModal"><i class="fa fa-trash"></i></button>
 

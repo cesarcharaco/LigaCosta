@@ -52,7 +52,7 @@
                         <td>{{ $key->edad }}</td>
                         <td>{{ $key->equipos->nombre }}</td>
                         <td align="center">
-                            <a href="#"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
+                            <a href="{{ route('coachs.edit',$key->id) }}"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
 
                             <a href="#"><button type="button" class="btn btn-danger btn-sm pull"><i class="fa fa-trash"></i></button></a>
 
