@@ -852,7 +852,7 @@ aside.left-panel {
   .navbar .navbar-brand {
     border-bottom: 1px solid #4e4e52;
     color: #f1f2f7 !important;
-    font-family: 'Open Sans';
+    font-family: Comic Sans MS;
     font-size: 22px;
     float: none;
     line-height: 50px;
@@ -877,7 +877,7 @@ aside.left-panel {
     color: white;
     clear: both;
     display: block;
-    font-family: 'Open Sans';
+    font-family: Comic Sans MS;
     font-size: 14px;
     font-weight: 700;
     line-height: 50px;
@@ -898,7 +898,7 @@ aside.left-panel {
         background: none !important;
         color: white !important;
         display: inline-block;
-        font-family: 'Open Sans';
+        font-family: Comic Sans MS;
         font-size: 14px;
         line-height: 30px;
         padding: 10px 0;
