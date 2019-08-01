@@ -48,15 +48,15 @@
                         {!! Form::open(['route' => ['equipos.update',$equipo->id], 'method' => 'PUT', 'name' => 'form', 'id' => 'form','data-parsley-validate', 'class'=>'form-horizontal', 'enctype' =>'multipart/form-data']) !!}
                         @csrf
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="nombre" class=" form-control-label">Nombre <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="nombre" class=" form-control-label"><b style="color: red;">*</b></label> Nombre</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre..." required="required" class="form-control" value="{{ $equipo->nombre }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="lema" class=" form-control-label">Lema <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="lema" class=" form-control-label"><b style="color: red;">*</b></label> Lema</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="lema" name="lema" placeholder="Ingrese lema..." required="required" class="form-control" value="{{ $equipo->lema }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="liga" class=" form-control-label">Liga <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="liga" class=" form-control-label"><b style="color: red;">*</b></label> Liga</b></label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="liga" id="liga" class="form-control">
                                         <option value="Football Tackle" @if($equipo->liga=="Football Tackle") selected="selected" @endif>Football Tackle</option>

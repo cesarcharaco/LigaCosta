@@ -47,26 +47,26 @@
                     <div class="card-body card-block">
                         <form action="{{ route('jugadores.store') }}" method="post" class="form-horizontal">
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="nombres" class=" form-control-label">Nombres <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="nombres" class=" form-control-label"><b style="color: red;">*</b></label> Nombres</label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="nombres" name="nombres" placeholder="Ingrese los nombres..." class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="apellidos" class=" form-control-label">Apellidos <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="apellidos" class=" form-control-label"><b style="color: red;">*</b></label> Apellidos</label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="apellidos" name="apellidos" placeholder="Ingrese los apellidos..." class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="rut" class=" form-control-label">RUT <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="rut" class=" form-control-label"><b style="color: red;">*</b></label> RUT</label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="rut" name="rut" placeholder="Ingrese el rut..." class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="edad" class=" form-control-label">Edad <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="edad" class=" form-control-label"><b style="color: red;">*</b></label> Edad</label></div>
                                 <div class="col-12 col-md-9">
                                     <input type="number" id="edad" name="edad" placeholder="Ingrese la edad..." class="form-control">
                                     <small>La edad debe ser mayor de 18 y menor que 80</small>
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="genero" class=" form-control-label">Género <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="genero" class=" form-control-label"><b style="color: red;">*</b></label> Género</label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="genero" id="genero" class="form-control">
                                         <option value="Masculino">Masculino</option>
@@ -75,15 +75,15 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="posicion" class=" form-control-label">Posición <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="posicion" class=" form-control-label"><b style="color: red;">*</b></label> Posición</label></div>
                                 <div class="col-12 col-md-9"><input type="number" id="posicion" name="posicion" placeholder="Ingrese la posición..." class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="num_camiseta" class=" form-control-label">Nro. de Camiseta <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="num_camiseta" class=" form-control-label"><b style="color: red;">*</b></label> Nro. de Camiseta</label></div>
                                 <div class="col-12 col-md-9"><input type="number" id="num_camiseta" name="num_camiseta" placeholder="Ingrese el número de la camiseta..." class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="liga" class=" form-control-label">Equipos <b style="color: red;">*</b></label></div>
+                                <div class="col col-md-3"><label for="liga" class=" form-control-label"><b style="color: red;">*</b></label> Equipos</label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="liga" id="liga" class="form-control">
                                         @foreach($equipos as $key)
