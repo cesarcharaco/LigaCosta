@@ -42,21 +42,21 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Registro de equipo</strong>
+                        <strong>Registro de equipo <small>Todos los campos (<b style="color: red;">*</b>) son requeridos.</small></strong>
                     </div>
                     <div class="card-body card-block">
                         <form action="{{ route('equipos.store') }}" method="post" class="form-horizontal" enctype="multipart/form-data">
                             @csrf
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="nombre" class=" form-control-label">Nombre</label></div>
+                                <div class="col col-md-3"><label for="nombre" class=" form-control-label">Nombre <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre..." required="required" class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="lema" class=" form-control-label">Lema</label></div>
+                                <div class="col col-md-3"><label for="lema" class=" form-control-label">Lema <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="lema" name="lema" placeholder="Ingrese lema..." required="required" class="form-control"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="liga" class=" form-control-label">Liga</label></div>
+                                <div class="col col-md-3"><label for="liga" class=" form-control-label">Liga <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="liga" id="liga" class="form-control">
                                         <option value="Football Tackle">Football Tackle</option>
@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="logo" class=" form-control-label">Logo</label></div>
+                                <div class="col col-md-3"><label for="logo" class=" form-control-label">Logo <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9"><input type="file" id="logo" name="logo" placeholder="Ingrese logo..." class="form-control"></div>
                             </div>
                             <div class="card-footer">

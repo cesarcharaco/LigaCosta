@@ -42,28 +42,31 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Modificar coach</strong>
+                        <strong>Modificar coach <small>Todos los campos (<b style="color: red;">*</b>) son requeridos.</small></strong>
                     </div>
                     <div class="card-body card-block">
                         {!! Form::open(['route' => ['jugadores.update',$coach->id], 'method' => 'PUT', 'name' => 'form', 'id' => 'form','data-parsley-validate', 'class'=>'form-horizontal']) !!}
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="nombres" class=" form-control-label">Nombres</label></div>
+                                <div class="col col-md-3"><label for="nombres" class=" form-control-label">Nombres <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="nombres" name="nombres" placeholder="Ingrese los nombres..." class="form-control" value="{{ $coach->nombres }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="apellidos" class=" form-control-label">Apellidos</label></div>
+                                <div class="col col-md-3"><label for="apellidos" class=" form-control-label">Apellidos <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="apellidos" name="apellidos" placeholder="Ingrese los apellidos..." class="form-control" value="{{ $coach->apellidos }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="rut" class=" form-control-label">RUT</label></div>
+                                <div class="col col-md-3"><label for="rut" class=" form-control-label">RUT <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="rut" name="rut" placeholder="Ingrese el rut..." class="form-control" value="{{ $coach->rut }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="edad" class=" form-control-label">Edad</label></div>
-                                <div class="col-12 col-md-9"><input type="number" id="edad" name="edad" placeholder="Ingrese la edad..." class="form-control" value="{{ $coach->edad }}"></div>
+                                <div class="col col-md-3"><label for="edad" class=" form-control-label">Edad <b style="color: red;">*</b>   </label></div>
+                                <div class="col-12 col-md-9">
+                                    <input type="number" id="edad" name="edad" placeholder="Ingrese la edad..." class="form-control" value="{{ $coach->edad }}">
+                                    <small>La edad debe ser mayor de 18 y menor que 80</small>
+                                </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="id_equipo" class=" form-control-label">Equipos</label></div>
+                                <div class="col col-md-3"><label for="id_equipo" class=" form-control-label">Equipos <b style="color: red;">*</b></label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="id_equipo" id="id_equipo" class="form-control">
                                         @foreach($equipos as $key)
