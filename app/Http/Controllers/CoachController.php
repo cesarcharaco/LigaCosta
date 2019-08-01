@@ -88,7 +88,24 @@ class CoachController extends Controller
      */
     public function update(Request $request,$id)
     {
-        
+        $buscar=Coach::where('rut',$request->rut)->where('id','<>',$id)->first();
+        if (!empty($buscar)) {
+            flash('<i class="icon-circle-check"></i> El RUT ya se encuentra en registrado!')->warning()->important();
+            return redirect()->back();
+        } else {
+            
+        $coach=new Coach();
+        $coach->nombres=$request->nombres;
+        $coach->apellidos=$request->apellidos;
+        $coach->rut=$request->rut;
+        $coach->edad=$request->edad;
+        $coach->id_equipo=$request->id_equipo;
+        $coach->save();
+
+        flash('<i class="icon-circle-check"></i> Coach actualizado exitosamente!')->success()->important();
+        return redirect()->to('coachs');
+           }
+              
     }
 
     /**
@@ -99,6 +116,15 @@ class CoachController extends Controller
      */
     public function destroy(Request $request)
     {
-        //
+        $coach=Coach::find($request->id_coach);
+         
+        if ($coach->delete()) {
+            
+            flash('Registro eliminado exitosamente!', 'success');
+                return redirect()->back();
+        } else {
+            flash('No se pudo eliminar el registro, posiblemente esté siendo usada su información en otra área!', 'error');
+                return redirect()->back();
+        } 
     }
 }

@@ -46,6 +46,7 @@
                     </div>
                     <div class="card-body card-block">
                         {!! Form::open(['route' => ['jugadores.update',$coach->id], 'method' => 'PUT', 'name' => 'form', 'id' => 'form','data-parsley-validate', 'class'=>'form-horizontal']) !!}
+                        @csrf
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="nombres" class=" form-control-label"> <b style="color: red;">*</b></label> Nombres</label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="nombres" name="nombres" placeholder="Ingrese los nombres..." class="form-control" value="{{ $coach->nombres }}"></div>
