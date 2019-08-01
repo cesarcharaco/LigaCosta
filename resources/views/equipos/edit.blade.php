@@ -66,10 +66,10 @@
                             </div>
                             @if($equipo->url_logo)
                                         
-                            <div class="row mb-3">
-                                <div class="col-md-8">
+                            <div class="row form-group">
+                                <div class="col col-md-8">
                                     <label for="name">Logo Actual:</label>
-                                    <img width="50%" height="50%" src="{{ asset($equipo->url_logo) }}">    
+                                    <img src="{{ asset($equipo->url_logo) }}" width="250px" height="250px">    
                                 </div>
                             </div>
                             @endif
