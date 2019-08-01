@@ -25,6 +25,20 @@
 <div class="content mt-3">
     <div class="animated fadeIn">
         <div class="row">
+            <div class="col-md-12">
+            @include('flash::message')
+             @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                @include('flash::message')
+                <p>Corrige los siguientes errores:</p>
+                <ul>
+                    @foreach ($errors->all() as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                </div>
+            @endif
+            </div>
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
@@ -49,11 +63,19 @@
                                 <div class="col-12 col-md-9"><input type="number" id="edad" name="edad" placeholder="Ingrese la edad..." class="form-control" value="{{ $coach->edad }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="liga" class=" form-control-label">Equipos</label></div>
+                                <div class="col col-md-3"><label for="id_equipo" class=" form-control-label">Equipos</label></div>
                                 <div class="col-12 col-md-9">
-                                    <select name="liga" id="liga" class="form-control">
+                                    <select name="id_equipo" id="id_equipo" class="form-control">
                                         @foreach($equipos as $key)
-                                        <option value="{{ $key->id }}" @if($coach->id_equipo==$key->id) selected="selected" @endif>{{ $key->nombre }}</option>
+                                            @php $cont=0; @endphp
+                                            @foreach($coachs as $key2)
+                                                @if($key2->id_equipo==$key->id)
+                                                    @php $cont++; @endphp
+                                                @endif
+                                            @endforeach
+                                            @if($cont==0 || $coach->id_equipo==$key->id)
+                                                <option value="{{ $key->id }}" @if($coach->id_equipo==$key->id) selected="selected" @endif>{{ $key->nombre }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>

@@ -18,6 +18,7 @@ class CreateEquiposTable extends Migration
             $table->string('nombre');
             $table->string('lema');
             $table->enum('liga',['Football Tackle','Football Flag']);
+            $table->string('nombre_logo')->nullable();
             $table->string('url_logo')->nullable();
             $table->timestamps();
         });

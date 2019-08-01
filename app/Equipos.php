@@ -8,7 +8,7 @@ class Equipos extends Model
 {
     protected $table='equipos';
 
-    protected $fillable=['nombre','lema','url_logo'];
+    protected $fillable=['nombre','lema','nombre_logo','url_logo'];
 
     public function coachs()
     {

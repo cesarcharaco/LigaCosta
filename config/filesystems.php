@@ -63,6 +63,10 @@ return [
             'bucket' => env('AWS_BUCKET'),
             'url' => env('AWS_URL'),
         ],
+        'logos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/logos'),
+        ],
 
     ],
 

@@ -22,6 +22,7 @@ class CreateJugadorTable extends Migration
             $table->enum('genero',['Masculino','Femenino']);
             $table->string('posicion');
             $table->string('num_camiseta');
+            $table->enum('status',['Activo','Suspendido','Retirado'])->default('Activo');
             $table->unsignedBigInteger('id_equipo');
 
             $table->foreign('id_equipo')->references('id')->on('equipos')->onDelete('cascade');

@@ -24,7 +24,20 @@
 <div class="content mt-3">
     <div class="animated fadeIn">
         <div class="row">
-
+        <div class="col-md-12">
+            @include('flash::message')
+             @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                @include('flash::message')
+                <p>Corrige los siguientes errores:</p>
+                <ul>
+                    @foreach ($errors->all() as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                </div>
+            @endif
+        </div>
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
@@ -38,6 +51,7 @@
                 <th>Nombre</th>
                 <th>Lema</th>
                 <th>Liga</th>
+                <th>Logo</th>
                 <th>Opciones</th>
               </tr>
             </thead>
@@ -47,6 +61,11 @@
                         <td>{{ $key->nombre }}</td>
                         <td>{{ $key->lema }}</td>
                         <td>{{ $key->liga}}</td>
+                        <td width="25%">@if($key->url_logo=="")
+                            Sin Logo
+                            @else
+                            <a href="{{ asset($key->url_logo) }}"><img width="25%" height="10%" src="{{ asset($key->url_logo) }}"></a>
+                            @endif</td>
                         <td align="center">
                             <a href="{{ route('equipos.edit',$key->id) }}"><button type="button" class="btn btn-primary btn-sm pull"><i class="fa fa-edit"></i></button></a>
 
@@ -88,7 +107,7 @@
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-danger">Confirmar</button>
+                <button type="submit" class="btn btn-danger">Confirmar</button>
             </div>
             {!! Form::close() !!}
         </div>

@@ -25,6 +25,20 @@
 <div class="content mt-3">
     <div class="animated fadeIn">
         <div class="row">
+            <div class="col-md-12">
+            @include('flash::message')
+             @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                @include('flash::message')
+                <p>Corrige los siguientes errores:</p>
+                <ul>
+                    @foreach ($errors->all() as $message)
+                        <li>{{ $message }}</li>
+                    @endforeach
+                </ul>
+                </div>
+            @endif
+            </div>
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Coach;
 use Illuminate\Http\Request;
 use App\Equipos;
+use App\Http\Requests\CoachsRequest;
 class CoachController extends Controller
 {
     /**
@@ -27,8 +28,8 @@ class CoachController extends Controller
     public function create()
     {
         $equipos=Equipos::all();
-
-        return view('coachs.create',compact('equipos'));
+        $coachs=Coach::all();
+        return view('coachs.create',compact('equipos','coachs'));
     }
 
     /**
@@ -37,9 +38,20 @@ class CoachController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CoachsRequest $request)
     {
-        //
+        //dd($request->all());
+
+        $coach=new Coach();
+        $coach->nombres=$request->nombres;
+        $coach->apellidos=$request->apellidos;
+        $coach->rut=$request->rut;
+        $coach->edad=$request->edad;
+        $coach->id_equipo=$request->id_equipo;
+        $coach->save();
+
+        flash('<i class="icon-circle-check"></i> Coach registrado exitosamente!')->success()->important();
+        return redirect()->to('coachs');
     }
 
     /**
@@ -63,8 +75,8 @@ class CoachController extends Controller
     {
         $coach=Coach::find($id);
         $equipos=Equipos::all();
-
-        return view('coachs.edit',compact('coach','equipos'));
+        $coachs=Coach::all();
+        return view('coachs.edit',compact('coach','equipos','coachs'));
     }
 
     /**
@@ -74,9 +86,9 @@ class CoachController extends Controller
      * @param  \App\Coach  $coach
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Coach $coach)
+    public function update(Request $request,$id)
     {
-        //
+        
     }
 
     /**
