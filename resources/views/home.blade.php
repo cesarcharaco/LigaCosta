@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">@php echo cuantos_equipos(); @endphp</span>
+                            <span class="count">{{-- @php echo cuantos_equipos(); @endphp --}}3</span>
                         </h4>
                         <p class="text-light">Equipos</p>
 
@@ -79,7 +79,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">@php echo cuantos_coachs(); @endphp</span>
+                            <span class="count">{{-- @php echo cuantos_coachs(); @endphp --}}3</span>
                         </h4>
                         <p class="text-light">Coachs</p>
 
@@ -108,7 +108,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">@php echo cuantos_ftackle(); @endphp</span>
+                            <span class="count">{{-- @php echo cuantos_ftackle(); @endphp --}}2</span>
                         </h4>
                         <p class="text-light">Jugadores Football Tackle</p>
 
@@ -137,7 +137,7 @@
                             </div>
                         </div>
                         <h4 class="mb-0">
-                            <span class="count">@php echo cuantos_fflag(); @endphp</span>
+                            <span class="count">{{-- @php echo cuantos_fflag(); @endphp --}}2</span>
                         </h4>
                         <p class="text-light">Jugadoras Football Flag</p>
 
