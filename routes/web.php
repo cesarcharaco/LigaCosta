@@ -22,4 +22,6 @@ Route::middleware('auth')->group(function () {
 	Route::resource('equipos','EquiposController');
 	Route::resource('coachs','CoachController');
 	Route::resource('jugadores','JugadorController');
+	Route::resource('users','UsersController');
+	Route::get('profile','UsersController@profile')->name('profile');
 });

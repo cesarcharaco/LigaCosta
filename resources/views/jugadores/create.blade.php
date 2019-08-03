@@ -14,7 +14,7 @@
         <div class="page-header float-right">
             <div class="page-title">
                 <ol class="breadcrumb text-right">
-                    <li><a href="{{ route('equipos.index') }}">Listado</a></li>
+                    <li><a href="{{ route('jugadores.index') }}">Listado</a></li>
                     <li class="active">Registrar</li>
                 </ol>
             </div>

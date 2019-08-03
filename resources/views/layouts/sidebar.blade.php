@@ -65,6 +65,12 @@
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
                         </ul>
                     </li>--}}
+                    @if(\Auth::getUser()->name=="Administrador")
+                    <h3 class="menu-title">Usuarios</h3><!-- /.menu-title -->
+                    <li class="active">
+                        <a href="{{ route('users.index') }}"> <i class="menu-icon fa fa-dashboard"></i>Listado </a>
+                    </li>
+                    @endif
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
