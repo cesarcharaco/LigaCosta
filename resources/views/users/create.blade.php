@@ -47,20 +47,23 @@
                     <div class="card-body">
                         <h4 class="card-title">Registrar Usuarios <br> <p>Todos los campos son requeridos (<b style="color:red;">*</b>)</p></h4>
                     	<div class="row form-group">
-                                <div class="col col-md-3"><label for="nombres" class=" form-control-label"><b style="color: red;">*</b></label> Nombre</label></div>
+                            <div class="col col-md-3">
+                                <label for="nombres" class=" form-control-label"><b style="color: red;">*</b> Nombre</label>
+                            </div>
+                            <div class="col-12 col-md-9">
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Ej: Martin Ferrer">
-
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
                         </div>
-
                         <div class="form-group row">
-                            <label for="email" class="col-md-1 col-form-label text-md-right"><b style="color:red;">*</b>Correo</label>
-
-                            <div class="col-md-6">
+                            <div class="col col-md-3">
+                                <label for="email" class="form-control-label"><b style="color:red;">*</b>Correo</label>
+                            </div>
+                            <div class="col-12 col-md-9">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Ej: micorreo@gmail.com">
 
                                 @error('email')
@@ -72,9 +75,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-1 col-form-label text-md-right"><b style="color:red;">*</b>Contraseña</label>
+                            <div class="col col-md-3">
+                                <label for="password" class="form-control-label text-md-right"><b style="color:red;">*</b>Contraseña</label>
+                            </div>
 
-                            <div class="col-md-6">
+                            <div class="col-12 col-md-9">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -86,9 +91,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-md-1 col-form-label text-md-right"><b style="color:red;">*</b>Confirma Contraseña</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                                <label for="password-confirm" class="form-control-label text-md-right"><b style="color:red;">*</b>Confirma Contraseña</label>
+                            </div>
+                            <div class="col-12 col-md-9">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
