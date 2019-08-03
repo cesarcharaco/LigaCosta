@@ -62,8 +62,8 @@
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="edad" class=" form-control-label"><b style="color: red;">*</b></label> Edad</label></div>
                                 <div class="col-12 col-md-9">
-                                    <input type="number" id="edad" name="edad" placeholder="Ingrese la edad..." class="form-control" value="{{ $jugador->edad }}">
-                                    <small>La edad debe ser mayor de 18 y menor que 80</small>
+                                    <input type="number" id="edad" name="edad" placeholder="Ingrese la edad..." class="form-control" value="{{ $jugador->edad }}"  min="10" max="25">
+                                    <small>La edad debe ser mayor de 10 y menor que 25</small>
                                 </div>
                             </div>
                             <div class="row form-group">
@@ -84,9 +84,9 @@
                                 <div class="col-12 col-md-9"><input type="number" id="num_camiseta" name="num_camiseta" placeholder="Ingrese el número de la camiseta..." class="form-control" value="{{ $jugador->num_camiseta }}"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="liga" class=" form-control-label"><b style="color: red;">*</b></label> Equipos</label></div>
+                                <div class="col col-md-3"><label for="equipos" class=" form-control-label"><b style="color: red;">*</b></label> Equipos</label></div>
                                 <div class="col-12 col-md-9">
-                                    <select name="liga" id="liga" class="form-control">
+                                    <select name="id_equipo" id="id_equipo" class="form-control">
                                         @foreach($equipos as $key)
                                         <option value="{{ $key->id }}">{{ $key->nombre }}</option>
                                         @endforeach
